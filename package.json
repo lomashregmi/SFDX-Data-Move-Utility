@@ -89,6 +89,11 @@
         "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
         "version": "oclif-dev readme && git add README.md",
         "build": "tsc -b",
-        "typedoc-sfdmu-run-addons": "typedoc --options typedoc-sfdmu-run-addons.json"
+        "typedoc-sfdmu-run-addons": "typedoc --options typedoc-sfdmu-run-addons.json",
+        "start": "node dist/index.js",
+        "postinstall": "tsc",
+        "watch-node": "nodemon dist/index.js",
+        "watch-ts": "tsc -w",
+        "deploy": "git add . && git commit -m Heroku && git push heroku master"
     }
 }
